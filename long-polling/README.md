@@ -9,6 +9,8 @@ Other notable:
 
 Try running the code in Node and sending messages using your browser:
 
+`node server.js`
+
 - By navigating to http://localhost:8080/, you can open the client
 - To send messages, simply open http://localhost:8080/msg/Your+message+here
 
