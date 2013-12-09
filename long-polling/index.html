@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Long Polling</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript">
+    var counter = 0;
+    var poll = function() {
+      $.getJSON('/poll/' + counter, function(res) {
+        counter = res.count;
+        var elem = $('#output');
+        elem.text(elem.text() + res.append);
+        poll();
+      });
+    };
+    poll();
+  </script>
+</head>
+<body>
+  <textarea id="output" name="" cols="30" rows="10"></textarea>
+</body>
+</html>
